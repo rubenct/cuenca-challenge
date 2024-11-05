@@ -43,12 +43,7 @@ curl --location 'http://127.0.0.1:8080/api/v1/nqueens' \
 ### Healthcheck endpoint
 
 ```
-curl --location --request GET 'http://127.0.0.1:8080/api/v1/version' \
---header 'Content-Type: application/json' \
---data '{
-    "n": 12,
-    "show_solutions":false
-}'
+curl --location --request GET 'http://127.0.0.1:8080/api/v1/version'
 ```
 - `n` [int]: n number of queens and size of board n x n: n >= 8
 - `show_solutions` [bool]: **true**: Show all solutions found (the bigger is 'n' the longer it'll take the request duration, **false**: solutions will be hidden and only show the number of solutions.
