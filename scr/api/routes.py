@@ -11,6 +11,9 @@ from scr.config.settings import settings
 
 router = APIRouter()
 
+@router.get("/version")
+async def root():
+    return {"version": "1.0"}
 
 @router.post(
     "/nqueens",
