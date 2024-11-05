@@ -24,7 +24,7 @@ def n_queens(n: int, row: int, cols: int, diagonal_45: int, diagonal_135: int):
         position = available_positions & -available_positions
         #Get the position available rightmost,
         column = bin(position-1).count('1')
-
+        #Delegate the generation of solutions values to the nex recursive call.
         yield from ([column] + solution
                     for solution in
                     n_queens
@@ -36,5 +36,5 @@ def n_queens(n: int, row: int, cols: int, diagonal_45: int, diagonal_135: int):
                         (diagonal_135 | position) >> 1
                         )
                     )
-
+        #Elimitate the LBS
         available_positions &= available_positions-1
