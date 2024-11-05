@@ -52,3 +52,11 @@ curl --location --request GET 'http://127.0.0.1:8080/api/v1/version' \
 ```
 - `n` [int]: n number of queens and size of board n x n: n >= 8
 - `show_solutions` [bool]: **true**: Show all solutions found (the bigger is 'n' the longer it'll take the request duration, **false**: solutions will be hidden and only show the number of solutions.
+
+
+### Testing
+The testing is executed once the docker service is up.
+Performs a test to the **.../queens** endpoint to verify response:
+- HTTP_200_OK for n valid
+- That the solutions found for n=8 are 92.
+- That one of the solutions for n=8 is within the solutions ([3,6,2,7,1,4,0,5])
