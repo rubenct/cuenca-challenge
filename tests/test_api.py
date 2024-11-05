@@ -9,7 +9,7 @@ client = TestClient(app)
 def test_solutions():
     response = client.post(
         f"{settings.API_V1_STR}/nqueens",
-        json={"n": 8, "show_solutions": True},
+        json={"n": 8}
     )
     assert response.status_code == status.HTTP_200_OK
     jason_response = response.json()
