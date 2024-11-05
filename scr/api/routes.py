@@ -70,12 +70,14 @@ def get_or_create_solutions(request: NQueensRequest, db: Session = Depends(get_d
     db.add_all(db_solutions)
     db.commit()
 
+    length_solutions = len(db_solutions)
+
     #Don't show solutions when the request show_solutions is false
     if not request.show_solutions:
         db_solutions.clear()
 
     return NQueensSolutionsWithCount(
         comments=f"Data calculated successfully in {round(time_taken,2)} seconds",
-        total_solutions=len(db_solutions),
+        total_solutions=length_solutions,
         solutions=db_solutions
     )
