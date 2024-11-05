@@ -22,3 +22,11 @@ services:
       POSTGRES_USER: user
     ports:
       - "5432:5432"
+
+  test:
+    build: .
+    container_name: test_runner
+    depends_on:
+      - app
+      - postgres_db
+    command: [ "pytest", "-v", "--tb=short", "--disable-warnings" ]

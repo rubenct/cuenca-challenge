@@ -3,13 +3,14 @@ from scr.api.routes import router
 from scr.database.connection import engine
 from scr.database.models import Base
 
-# Crear tablas
+# Create tables
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="N-Queens Solver",
-    description="API para resolver el problema de las N reinas",
+    description="API to solve the n queens puzzle",
     version="1.0.0"
 )
+
 
 app.include_router(router, prefix="/api/v1")

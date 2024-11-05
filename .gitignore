@@ -1,2 +1,7 @@
 venv
 test_main.http
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/misc.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
+__pycache__/
