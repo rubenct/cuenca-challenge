@@ -1,12 +1,15 @@
-name: build-python-app
-run-name: ${{ github.actor }} is learning GitHub Actions
-on: 
+name: FastAPI
+on:
   push:
-    branches: ['feature/**']
+    branches: [ 'main', 'feature/**']
+    tags: [ 'v*']
 jobs:
-  build:
+  build-python:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install poetry
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.12
+      - name: Install 
         run: pip install requirements.txt
