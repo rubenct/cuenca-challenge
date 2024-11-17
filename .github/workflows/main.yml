@@ -1,0 +1,14 @@
+name: build-python-app
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: 
+  push:
+    branches: ['feature/**']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install poetry
+        run: pip install requirements.txt
